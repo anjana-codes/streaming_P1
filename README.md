@@ -13,3 +13,11 @@ The Python language includes generators - we'll use this feature to generate som
 As the code runs, it will continuously update the log file. 
 We'll use a consumer to monitor the log file and alert us when a special message is detected. 
 
+## Task 1: Create a Unique Producer
+Add a new Python script in the producers folder.
+Name your script using your unique identifier (e.g., basic_producer_yourname.py).
+Copy and paste the content from the example file into  yours. 
+Git add, commit, and push your changes to your GitHub repo before making any other changes. See instructions at https://github.com/denisecase/buzzline-01-case/blob/main/docs/GIT-ADD-COMMIT-PUSH.mdLinks to an external site..
+Modify your Python generator to produce custom messages.
+Log these messages using the provided logger.
+As you work, git add, commit, and push your changes to your GitHub repo. (Frequent small, commits are helpful.)
