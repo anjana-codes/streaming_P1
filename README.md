@@ -21,3 +21,12 @@ Git add, commit, and push your changes to your GitHub repo before making any oth
 Modify your Python generator to produce custom messages.
 Log these messages using the provided logger.
 As you work, git add, commit, and push your changes to your GitHub repo. (Frequent small, commits are helpful.)
+
+## Task 2: Create a Unique Consumer
+Add a new Python script in the consumers folder.
+Name your script uniquely (e.g., basic_consumer_yourname.py).
+Copy and paste the content from the example file into  yours. 
+Git add, commit, and push your changes to your GitHub repo before making any other changes. 
+Continue to read the log file in real time as we did in the example. 
+Implement real-time analytics (e.g., alerting on a specific pattern that matches your new messages).
+As you work, git add, commit, and push your changes to your GitHub repo. 
