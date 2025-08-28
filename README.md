@@ -52,7 +52,7 @@ We'll use a consumer to monitor the log file and alert us when a special message
 6. Log these messages using the provided logger.
 7. As you work, git add, commit, and push your changes to your GitHub repo. (Frequent small, commits are helpful.)
 
-## Task 2: Create a Unique Consumer
+### Task 2: Create a Unique Consumer
 1. Add a new Python script in the consumers folder.
 2. Name your script uniquely (basic_consumer_anjana.py).
 3. Copy and paste the content from the example file into  yours. 
@@ -61,7 +61,7 @@ We'll use a consumer to monitor the log file and alert us when a special message
 6. Implement real-time analytics (e.g., alerting on a specific pattern that matches your new messages).
 7. As you work, git add, commit, and push your changes to your GitHub repo. 
 
-## Task 3. Generate Streaming Data (Terminal 1)
+### Task 3. Generate Streaming Data (Terminal 1)
 
 Now we'll generate some streaming data. By the way - you've done 90% of the hard work before we even look at code. Congratulations!
 
@@ -86,8 +86,8 @@ py -m consumer.basic_consumer_anjana
 
 ```
 
-## Save Space
+### Save Space
 To save disk space, you can delete the .venv folder when not actively working on this project. We can always recreate it, activate it, and reinstall the necessary packages later. Managing Python virtual environments is a necessary and valuable skill. We will get a good amount of practice.
 
-## License
+### License
 This project is licensed under the MIT License as an example project. You are encouraged to fork, copy, explore, and modify the code as you like. See the LICENSE file for more.
