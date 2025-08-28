@@ -6,7 +6,8 @@ Initial Streaming Project using the provided producer and consumer scripts.
 ## Objectives :
 
 The goal is to:
-Understand Python generators. Modify producers and consumers for real-time data streaming.
+Understand Python generators. 
+Modify producers and consumers for real-time data streaming.
 Perform basic real-time analytics.
 
 ![Python 3.11](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
