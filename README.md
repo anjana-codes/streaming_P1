@@ -1,9 +1,12 @@
-# PRoject: streaming_P1
+# Project Title: streaming_P1
 Initial Streaming Project using the provided producer and consumer scripts.
-The goal is to:
 
-Understand Python generators.
-Modify producers and consumers for real-time data streaming.
+### Name: Anjana Dhakal, 08/28/2025
+
+## Objectives :
+
+The goal is to:
+Understand Python generators. Modify producers and consumers for real-time data streaming.
 Perform basic real-time analytics.
 
 ![Python 3.11](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
@@ -20,9 +23,23 @@ We'll use a consumer to monitor the log file and alert us when a special message
 3. Clone-repo-to-local machine.
 4. Add key files such as .gitignore and requirements.txt.
 5. Use Git to add, commit, and push your new files to GitHub.
+ ```
+    git add .
+    git commit -m " update readme.md"
+    git push origin main
+
+```
 6. ALWAYS Create a Python Virtual Environment for your project.
+
+ ```
+    python -m venv .env
+    source .env/bin/activate
+```
 7. Install dependencies.
-  
+```
+    pip install -U pip setuptools wheel
+    py -m pip install --upgrade -r requirements.txt
+```
 
 ### Task 1: Create a Unique Producer
 1. Add a new Python script in the producers folder.
@@ -50,7 +67,7 @@ Now we'll generate some streaming data. By the way - you've done 90% of the hard
 In VS Code, open a terminal. Use the commands below to activate .venv, and run the generator as a module. To learn more about why we run our Python file as a module, see PYTHON-PKG-IMPORTS
 
 Windows:
-" 
+ ```
 .venv\Scripts\activate
 py -m producer.basic_producer_anjana
 
@@ -62,11 +79,11 @@ A common streaming task is monitoring a log file as it is being written. This pr
 In VS Code, open a NEW terminal in your root project folder. Use the commands below to activate .venv, and run the file as a module.
 
 Windows:
-"
+ ```
 .venv\Scripts\activate
 py -m consumer.basic_consumer_anjana
 
-"
+```
 
 ## Save Space
 To save disk space, you can delete the .venv folder when not actively working on this project. We can always recreate it, activate it, and reinstall the necessary packages later. Managing Python virtual environments is a necessary and valuable skill. We will get a good amount of practice.
