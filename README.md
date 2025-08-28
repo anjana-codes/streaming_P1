@@ -72,7 +72,7 @@ Windows:
 .venv\Scripts\activate
 py -m producer.basic_producer_anjana
 
-"
+```
 
 ## Task 4. Monitor an Active Log File (Terminal 2)
 A common streaming task is monitoring a log file as it is being written. This project has a consumer that reads and processes our own log file as log messages arrive.
