@@ -89,5 +89,3 @@ py -m consumer.basic_consumer_anjana
 ### Save Space
 To save disk space, you can delete the .venv folder when not actively working on this project. We can always recreate it, activate it, and reinstall the necessary packages later. Managing Python virtual environments is a necessary and valuable skill. We will get a good amount of practice.
 
-### License
-This project is licensed under the MIT License as an example project. You are encouraged to fork, copy, explore, and modify the code as you like. See the LICENSE file for more.
