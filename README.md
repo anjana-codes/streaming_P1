@@ -33,8 +33,8 @@ We'll use a consumer to monitor the log file and alert us when a special message
 6. ALWAYS Create a Python Virtual Environment for your project.
 
  ```
-    python -m venv .env
-    source .env/bin/activate
+    py -m venv .venv
+    .venv\Scripts\activate
 ```
 7. Install dependencies.
 ```
