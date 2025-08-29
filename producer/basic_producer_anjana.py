@@ -1,7 +1,7 @@
 
 
 """
-basic_generator_places_events.py
+basic_producer_anjana.py
 
 Generate some streaming buzz messages about events happening in different places. 
 """
