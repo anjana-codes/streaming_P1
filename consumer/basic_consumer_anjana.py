@@ -1,84 +1,91 @@
 """
-basic_consumer_anjana.py
+basic_consumer_case.py
 
-Read a log file as it is being written and perform simple analytics. 
+Read a log file as it is being written and process multiple unique messages at a time.
 """
 
 #####################################
 # Import Modules
 #####################################
 
-# Import packages from Python Standard Library
 import os
 import time
 
-# Import functions from local modules
 from utils.utils_logger import logger, get_log_file_path
 
 #####################################
-# Define a function to process a single message
+# Define a function to process messages
 #####################################
 
-
-def process_message(log_file) -> None:
+def process_messages(log_file, batch_size=4) -> None:
     """
-    Read a log file and process each message.
+    Read a log file and process up to 4 new messages at a time.
 
     Args:
-        log_file (str): The path to the log file to read.
+        log_file (str): Path to the log file.
+        batch_size (int): Number of messages to process per loop.
     """
+    seen_messages = set()
+
     with open(log_file, "r") as file:
-        # Move to the end of the file
         file.seek(0, os.SEEK_END)
-        print("Consumer is ready and waiting for a new log message...")
+        print("Consumer is ready and waiting for new log messages...")
 
-        # Use while True loop so the consumer keeps running forever
         while True:
+            new_messages = []
 
-            # Read the next line of the file
-            line = file.readline()
+            # Collect up to batch_size messages
+            for _ in range(batch_size):
+                line = file.readline()
+                if line:
+                    message = line.strip()
+                    if message not in seen_messages:
+                        seen_messages.add(message)
+                        new_messages.append(message)
 
-            # If the line is empty, wait for a new log entry
-            if not line:
-                delay_seconds = 1
-                time.sleep(delay_seconds)
+            # If no new messages, pause briefly
+            if not new_messages:
+                time.sleep(1)
                 continue
 
-            # We got a new log entry!
-            message = line.strip()
-            print(f"Consumed log message: {message}")
+            # Process all collected messages
+            for message in new_messages:
+                print(f"Consumed log message: {message}")
 
-            # Example analytics: Monitor for special events
-            if "festival" in message.lower():
-                print(f"ALERT: Festival detected! \n{message}")
-                logger.warning(f"ALERT: Festival detected! \n{message}")
+                # Event-specific alerts
+                if "festival" in message.lower():
+                    print(f"ALERT: Festival detected! \n{message}")
+                    logger.warning(f"ALERT: Festival detected! \n{message}")
 
-            if "concert" in message.lower():
-                print(f"INFO: A concert was mentioned. \n{message}")
-                logger.info(f"INFO: A concert was mentioned. \n{message}")
+                elif "parade" in message.lower():
+                    print(f"NOTICE: Parade detected! \n{message}")
+                    logger.info(f"NOTICE: Parade detected! \n{message}")
 
+                elif "concert" in message.lower():
+                    print(f"INFO: Concert mentioned! \n{message}")
+                    logger.info(f"INFO: Concert mentioned! \n{message}")
+
+                elif "sports" in message.lower():
+                    print(f"NOTICE: Sports event spotted! \n{message}")
+                    logger.info(f"NOTICE: Sports event spotted! \n{message}")
 
 #####################################
-# Define main function for this script.
+# Define main function
 #####################################
-
 
 def main() -> None:
     """Main entry point."""
-
     logger.info("START consumer...")
 
-    # Get the log file path from utils/utils_logger
     log_file_path = get_log_file_path()
     logger.info(f"Reading file located at {log_file_path}.")
 
     try:
-        process_message(log_file_path)
+        process_messages(log_file_path)
     except KeyboardInterrupt:
         print("User stopped the process.")
 
     logger.info("END consumer.....")
-
 
 #####################################
 # Conditional Execution
